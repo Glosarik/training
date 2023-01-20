@@ -20,7 +20,7 @@ public class Car {
     private Float floatExample;
     private String stringExample;
 
-    private static final String name = "Машина №";
+    private static final String NAME = "Машина №";
     private String color;
     private int weight, speed;
     private String brand;
@@ -58,7 +58,7 @@ public class Car {
     }
 
     public String getName() {
-        return name;
+        return NAME;
     }
 
     public byte getaByte() {
