@@ -48,11 +48,11 @@ public class Telephone {
         System.out.println(getName() + getCount() + "\n" + getModel() + getColor() + "Вес: " + getWeight() + " г.\n" + "Память: " + getMemory() + " гб.\n" + "Размеры: " + "Длина - " + getSize()[0] + " мм.; Ширина - " + getSize()[1] + " мм.; Высота - " + getSize()[2] + " мм.\n");
     }
 
-    public void setCount(){
+    public void setCount() {
         count++;
     }
 
-    public int getCount(){
+    public int getCount() {
         return count;
     }
 

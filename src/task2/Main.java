@@ -26,18 +26,18 @@ public class Main {
         int anInt;
         long aLong;
         boolean aBoolean = false;
-        char aChar = '©';
+        char aChar = 'Ö';
         double aDouble;
         float aFloat;
 
-        Byte byteExample = new Byte("1");
-        Short shortExample = new Short("1");
+        Byte byteExample = 1;
+        Short shortExample = 1;
         Integer integerExample;
-        Long longExample = new Long("1");
+        Long longExample = 1l;
         Boolean booleanExample = Boolean.FALSE;
-        Character characterExample = '©';
-        Double doubleExample = new Double("1.0");
-        Float floatExample = new Float("1.0");
+        Character characterExample = 'Ö';
+        Double doubleExample = 1d;
+        Float floatExample = 1f;
         String stringExample = "Hello";
 
         aShort = aByte;
