@@ -1,67 +1,56 @@
 package task2;
 
 public class Main {
-    byte aBytee;
-    short aShort;
-    int anInt;
-    long aLong;
-    boolean aBoolean;
-    char aChar;
-    double aDouble;
-    float aFloat;
+    private byte aByte;
+    private short aShort;
+    private int anInt;
+    private long aLong;
+    private boolean aBoolean;
+    private char aChar;
+    private double aDouble;
+    private float aFloat;
 
-    Byte byteExample;
-    Short shortExample;
-    Integer integerExample;
-    Long longExample;
-    Boolean booleanExample;
-    Character characterExample;
-    Double doubleExample;
-    Float floatExample;
-    String stringExample;
+    private Byte byteExample;
+    private Short shortExample;
+    private Integer integerExample;
+    private Long longExample;
+    private Boolean booleanExample;
+    private Character characterExample;
+    private Double doubleExample;
+    private Float floatExample;
+    private String stringExample;
 
     public static void main(String[] args) {
-        byte aByte = 0;
-        short aShort = 1;
+        byte aByte = 13;
+        short aShort;
         int anInt;
-        long aLong = 25298;
+        long aLong;
         boolean aBoolean = false;
         char aChar = '©';
-        double aDouble = 1124.65d;
+        double aDouble;
         float aFloat;
 
-        Byte byteExample = null;
-        Short shortExample = null;
-        Integer integerExample = null;
-        Long longExample = null;
-        Boolean booleanExample = null;
-        Character characterExample = null;
-        Double doubleExample = null;
-        Float floatExample = null;
-        String stringExample = null;
+        Byte byteExample = new Byte("1");
+        Short shortExample = new Short("1");
+        Integer integerExample;
+        Long longExample = new Long("1");
+        Boolean booleanExample = Boolean.FALSE;
+        Character characterExample = '©';
+        Double doubleExample = new Double("1.0");
+        Float floatExample = new Float("1.0");
+        String stringExample = "Hello";
 
-        anInt = (int) Math.round(aDouble);
-        aFloat = aLong + 0.422f;
+        aShort = aByte;
+        anInt = Math.round(aShort);
+        aLong = anInt;
+        aDouble = aLong;
+        aFloat = (float) aDouble + 0.524f;
+        integerExample = Math.round(aFloat);
 
-        Car car1 = new Car();
-        car1.setBrand("Audi");
-        car1.setColor("Red");
-        car1.setWeight(1_900);
-        car1.setSpeed(250);
+        Telephone iphone = new Telephone("Iphone 11", "Розовое-золото", 194, 128, new float[]{150.9f, 75.7f, 8.3f});
+        Telephone samsung = new Telephone("Samsung a12", "Серый", 208, 32, new float[]{164.0f, 75.8f, 8.9f});
 
-        Car car2 = new Car();
-        car2.setBrand("Lada");
-        car2.setColor("Yellow");
-        car2.setWeight(1_742);
-        car2.setSpeed(220);
-
-        System.out.println(car1.getName() + "1");
-        System.out.println("Название: " + car1.getBrand() + ", Цвет: " + car1.getColor() + ", Вес: " + car1.getWeight() + "кг." + ", Скорость: " + car1.getSpeed() + "км/ч" + "\n");
-
-        System.out.println(car1.getName() + "2");
-        System.out.println("Название: " + car2.getBrand() + ", Цвет: " + car2.getColor() + ", Вес: " + car2.getWeight() + "кг."  + ", Скорость: " + car2.getSpeed() + "км/ч"  + "\n");
-
-        System.out.println("Примитивные: " + aByte + " " + aShort + " " + anInt + " " + aLong + " " + aBoolean + " " + aChar + " " + aDouble + " " + aFloat);
-        System.out.println("Ссылочные: " + byteExample + " " + shortExample + " " + integerExample + " " + longExample + " " + booleanExample + " " + characterExample + " " + doubleExample + " " + floatExample + " " + stringExample);
+        System.out.println("Примитивные:\n" + "byte - " + aByte + "\n" + "short - " + aShort + "\n" + "int - " + anInt + "\n" + "long - " + aLong + "\n" + "boolean - " + aBoolean + "\n" + "char - " + aChar + "\n" + "double - " + aDouble + "\n" + "float - " + aFloat + "\n");
+        System.out.println("Ссылочные:\n" + "Byte - " + byteExample + "\n" + "Short - " + shortExample + "\n" + "Integer - " + integerExample + "\n" + "Long - " + longExample + "\n" + "Boolean - " + booleanExample + "\n" + "Character - " + characterExample + "\n" + "Double - " + doubleExample + "\n" + "Float - " + floatExample + "\n" + "String - " + stringExample);
     }
 }

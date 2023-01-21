@@ -1,6 +1,6 @@
 package task2;
 
-public class Car {
+public class Telephone {
     private byte aByte;
     private short aShort;
     private int anInt;
@@ -20,13 +20,44 @@ public class Car {
     private Float floatExample;
     private String stringExample;
 
-    private static final String NAME = "Машина №";
+    private static final String NAME = "Телефон №";
     private String color;
-    private int weight, speed;
-    private String brand;
+    private int weight, memory;
+    private String model;
+    private float[] size = new float[(3)];
+    private static int count;
+
+    /**
+     * @param model  Название бренда телефона
+     * @param color  Цвет
+     * @param weight Вес
+     * @param memory Память
+     * @param size   Размеры (1) - Длина, (2) - Ширина, (3) - Высота
+     */
+    public Telephone(String model, String color, int weight, int memory, float[] size) {
+        this.setCount();
+        this.setModel(model);
+        this.setColor(color);
+        this.setWeight(weight);
+        this.setMemory(memory);
+        this.setSize(size);
+        this.getInformation();
+    }
+
+    public void getInformation() {
+        System.out.println(getName() + getCount() + "\n" + getModel() + getColor() + "Вес: " + getWeight() + " г.\n" + "Память: " + getMemory() + " гб.\n" + "Размеры: " + "Длина - " + getSize()[0] + " мм.; Ширина - " + getSize()[1] + " мм.; Высота - " + getSize()[2] + " мм.\n");
+    }
+
+    public void setCount(){
+        count++;
+    }
+
+    public int getCount(){
+        return count;
+    }
 
     public String getColor() {
-        return color;
+        return "Цвет: " + color + "\n";
     }
 
     public void setColor(String color) {
@@ -41,24 +72,32 @@ public class Car {
         this.weight = weight;
     }
 
-    public int getSpeed() {
-        return speed;
+    public int getMemory() {
+        return memory;
     }
 
-    public void setSpeed(int speed) {
-        this.speed = speed;
+    public void setMemory(int memory) {
+        this.memory = memory;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getModel() {
+        return "Модель: " + model + "\n";
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getName() {
         return NAME;
+    }
+
+    public void setSize(float[] size) {
+        this.size = size;
+    }
+
+    public float[] getSize() {
+        return size;
     }
 
     public byte getaByte() {
