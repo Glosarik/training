@@ -33,7 +33,7 @@ public class Main {
         Byte byteExample = 1;
         Short shortExample = 1;
         Integer integerExample;
-        Long longExample = 1l;
+        Long longExample = 1L;
         Boolean booleanExample = Boolean.FALSE;
         Character characterExample = 'Ö';
         Double doubleExample = 1d;
