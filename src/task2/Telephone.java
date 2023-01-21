@@ -25,7 +25,7 @@ public class Telephone {
     private int weight, memory;
     private String model;
     private float[] size = new float[(3)];
-    private static int count;
+    private static int count; //подсчёт кол-во созданных объектов
 
     /**
      * @param model  Название бренда телефона
