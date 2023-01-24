@@ -74,6 +74,6 @@ public class Rainbow {
     }
 
     public void print(String str) {
-        System.out.println("Вы выбрали " + str + " цвет!");
+        System.out.println("Вы выбрали ".concat(str) + " цвет!");
     }
 }
