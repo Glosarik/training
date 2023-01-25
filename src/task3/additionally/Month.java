@@ -11,23 +11,25 @@ public class Month {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите порядковый номер месяца от 1 до 12: ");
-        int num = scanner.nextInt();
+        month(scanner.nextInt());
+    }
 
+    public static void month(int num) {
         switch (num) {
             case 1, 2, 3: {
-                month(num, "Осень");
+                print(num, "Осень");
                 break;
             }
             case 4, 5, 6: {
-                month(num, "Зима");
+                print(num, "Зима");
                 break;
             }
             case 7, 8, 9: {
-                month(num, "Весна");
+                print(num, "Весна");
                 break;
             }
             case 10, 11, 12: {
-                month(num, "Лето");
+                print(num, "Лето");
                 break;
             }
             default:
@@ -35,7 +37,7 @@ public class Month {
         }
     }
 
-    public static void month(int num, String timeOfYear) {
-        System.out.println("Вы выбрали: " + timeOfYear + ", Месяц: " + MONTH_0[num-1]);
+    public static void print(int num, String timeOfYear) {
+        System.out.println("Вы выбрали: " + timeOfYear + ", Месяц: " + MONTH_0[num - 1]);
     }
 }
