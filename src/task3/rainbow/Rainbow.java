@@ -9,13 +9,13 @@ public class Rainbow {
     private static final String COLOR_5 = "Синий";
     private static final String COLOR_6 = "Фиолетовый";
 
-    private static final String COLOR_7 = "Красно-Оранжевый";
-    private static final String COLOR_8 = "Оранжево-Желтый";
-    private static final String COLOR_9 = "Жёлто-Красный";
-    private static final String COLOR_10 = "Зелено-Голубой";
-    private static final String COLOR_11 = "Голубо-Желтый";
-    private static final String COLOR_12 = "Сине-Фиолетовый";
-    private static final String COLOR_13 = "Фиолетово-Зеленый";
+    private static final String COLOR_7 = "Красно-" + COLOR_1;
+    private static final String COLOR_8 = "Оранжево-" + COLOR_2;
+    private static final String COLOR_9 = "Жёлто-" + COLOR_0;
+    private static final String COLOR_10 = "Зелено-" + COLOR_4;
+    private static final String COLOR_11 = "Голубо-" + COLOR_2;
+    private static final String COLOR_12 = "Сине-" + COLOR_6;
+    private static final String COLOR_13 = "Фиолетово-" + COLOR_5;
 
     public void color(int num) {
         switch (num) {
