@@ -10,11 +10,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Rainbow rainbow = new Rainbow();
         System.out.println("Введите число от 0 до 13");
-        int num = scanner.nextInt();
-        if (num > 6) {
-            rainbow.colorMix(num);
-        } else {
-            rainbow.color(num);
-        }
+        rainbow.color(scanner.nextInt());
     }
 }
