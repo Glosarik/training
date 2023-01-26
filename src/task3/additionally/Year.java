@@ -14,10 +14,10 @@ public class Year {
         System.out.println("Введите год: ");
         int year = scanner.nextInt();
         if (year % 4 == 0) {
-            print(year, true);
-        } else if (year % 100 == 0) {
-            print(year, false);
-        } else if (year % 400 == 0) {
+            if (year % 100 == 0 && year % 400 != 0) {
+                print(year, false);
+                return;
+            }
             print(year, true);
         } else {
             print(year, false);
