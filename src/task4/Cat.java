@@ -23,8 +23,8 @@ public class Cat {
     private int age = 1;
     private static int catCount = 0;
 
-    private static final String VOWELLETTERS = "аоуеёиюя";
-    private static final String CONSOSANTLETTERS = "бвгджзклмнпрстфхцчшщ";
+    private static final String VOWEL_LETTERS = "аоуеёиюя";
+    private static final String CONSOSANT_LETTERS = "бвгджзклмнпрстфхцчшщ";
     private final Random random = new Random();
 
     public Cat() {
@@ -80,10 +80,10 @@ public class Cat {
     public String randomName() {
         char[] name = new char[random.nextInt(3, 7)];
         for (int i = 0; i < name.length; i = i + 2) {
-            name[i] = CONSOSANTLETTERS.charAt(random.nextInt(CONSOSANTLETTERS.length()));
+            name[i] = CONSOSANT_LETTERS.charAt(random.nextInt(CONSOSANT_LETTERS.length()));
         }
         for (int i = 1; i < name.length; i = i + 2) {
-            name[i] = VOWELLETTERS.charAt(random.nextInt(VOWELLETTERS.length()));
+            name[i] = VOWEL_LETTERS.charAt(random.nextInt(VOWEL_LETTERS.length()));
         }
         name[0] = Character.toUpperCase(name[0]);
         return String.valueOf(name);
