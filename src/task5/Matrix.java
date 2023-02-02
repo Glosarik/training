@@ -20,7 +20,7 @@ public class Matrix {
         roundNumber();
     }
 
-    public static void createAndDrawMatrix() {
+    private static void createAndDrawMatrix() {
         int num = 0;
         for (int i = 0; i < MATRIX.length; i++) {
             for (int j = 0; j < MATRIX.length; j++) {
@@ -32,12 +32,12 @@ public class Matrix {
                 ++num;
             }
         }
-        printMatrix(MATRIX);
+        printMatrix();
     }
 
-    public static void printMatrix(String[][] matrix) {
+    private static void printMatrix() {
         System.out.println("Матрица 10x10:");
-        for (String[] array : matrix) {
+        for (String[] array : MATRIX) {
             for (String anInt : array) {
                 System.out.printf(" " + anInt);
             }
@@ -45,7 +45,7 @@ public class Matrix {
         }
     }
 
-    public static void createDiagonal() {
+    private static void createDiagonal() {
         String print = "";
         for (int i = 0; i < (Math.min(MATRIX[0].length, MATRIX.length)); i++) {
             DIAGONAL[i] = MATRIX[i][i] + " ";
@@ -63,7 +63,7 @@ public class Matrix {
         System.out.println("\n\nСравниваем прямую и побочку:" + print);
     }
 
-    public static void printElement() {
+    private static void printElement() {
         StringBuilder stringBuilder = new StringBuilder();
         for (String s : DIAGONAL) {
             Matcher matcher = PATTERN.matcher(s);
@@ -78,7 +78,7 @@ public class Matrix {
         System.out.print("Выводим 2-4й элемент со строк:\n" + stringBuilder + "\n\n");
     }
 
-    public static void roundNumber() {
+    private static void roundNumber() {
         String[] num = new String[DIAGONAL.length - j];
         int k = 0;
         for (String s : DIAGONAL) {
@@ -98,7 +98,7 @@ public class Matrix {
         return sb.toString();
     }
 
-    public static String randomNumber() {
+    private static String randomNumber() {
         return String.valueOf(RANDOM.nextDouble(1, 9)).substring(0, 7);
     }
 }
