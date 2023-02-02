@@ -27,14 +27,6 @@ public class Cat {
     private static final String CONSOSANT_LETTERS = "бвгджзклмнпрстфхцчшщ";
     private static final Random random = new Random();
 
-    public Cat() {
-    }
-
-    public Cat(String name, int age) {
-        nameDefault = name;
-        ageDefault = age;
-    }
-
     public static void start() {
         firstCycle();
         secondCycle();
@@ -42,7 +34,7 @@ public class Cat {
         fourthCycle();
     }
 
-    public static void firstCycle() {
+    private static void firstCycle() {
         print("while");
         while (++catCount < 10) {
             Cat cat = new Cat();
@@ -51,7 +43,7 @@ public class Cat {
         catCount = 0;
     }
 
-    public static void secondCycle() {
+    private static void secondCycle() {
         print("for");
         for (int i = 0; i < 10; i++) {
             Cat cat = new Cat();
@@ -61,7 +53,7 @@ public class Cat {
         }
     }
 
-    public static void thirdCycle() {
+    private static void thirdCycle() {
         print("while");
         do {
             Cat cat = new Cat(randomName(), randomAge());
@@ -69,7 +61,7 @@ public class Cat {
         } while (++catCount < 10);
     }
 
-    public static void fourthCycle() {
+    private static void fourthCycle() {
         print("foreach");
         Cat[] cats = new Cat[5];
         for (Cat cat : cats) {
@@ -78,7 +70,15 @@ public class Cat {
         }
     }
 
-    public static String randomName() {
+    public Cat() {
+    }
+
+    public Cat(String name, int age) {
+        nameDefault = name;
+        ageDefault = age;
+    }
+
+    private static String randomName() {
         char[] name = new char[random.nextInt(3, 7)];
         for (int i = 0; i < name.length; i = i + 2) {
             name[i] = CONSOSANT_LETTERS.charAt(random.nextInt(CONSOSANT_LETTERS.length()));
@@ -90,27 +90,27 @@ public class Cat {
         return String.valueOf(name);
     }
 
-    public static int randomAge() {
+    private static int randomAge() {
         return random.nextInt(1, 28);
     }
 
-    public String getName() {
+    private String getName() {
         return nameDefault;
     }
 
-    public static void setName(String name) {
+    private static void setName(String name) {
         nameDefault = name;
     }
 
-    public int getAge() {
+    private int getAge() {
         return ageDefault;
     }
 
-    public static void setAge(int age) {
+    private static void setAge(int age) {
         ageDefault = age;
     }
 
-    public static void print(String str) {
+    private static void print(String str) {
         System.out.println("\nКотики с циклом " + str + ":");
     }
 
