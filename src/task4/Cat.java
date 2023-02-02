@@ -19,48 +19,49 @@ import java.util.Random;
  */
 public class Cat {
 
-    private String name = "Степашка";
-    private int age = 1;
+    private static String nameDefault = "Степашка";
+    private static int ageDefault = 1;
     private static int catCount = 0;
 
     private static final String VOWEL_LETTERS = "аоуеёиюя";
     private static final String CONSOSANT_LETTERS = "бвгджзклмнпрстфхцчшщ";
-    private final Random random = new Random();
+    private static final Random random = new Random();
 
     public Cat() {
     }
 
     public Cat(String name, int age) {
-        this.name = name;
-        this.age = age;
+        nameDefault = name;
+        ageDefault = age;
     }
 
     public static void start() {
-        Cat cat = new Cat();
-        cat.firstCycle();
-        cat.secondCycle();
-        cat.thirdCycle();
-        cat.fourthCycle();
+        firstCycle();
+        secondCycle();
+        thirdCycle();
+        fourthCycle();
     }
 
-    public void firstCycle() {
+    public static void firstCycle() {
         print("while");
         while (++catCount < 10) {
-            System.out.println(this);
+            Cat cat = new Cat();
+            System.out.println(cat);
         }
         catCount = 0;
     }
 
-    public void secondCycle() {
+    public static void secondCycle() {
         print("for");
         for (int i = 0; i < 10; i++) {
+            Cat cat = new Cat();
             setAge(randomAge());
             setName(randomName());
-            System.out.println(this);
+            System.out.println(cat);
         }
     }
 
-    public void thirdCycle() {
+    public static void thirdCycle() {
         print("while");
         do {
             Cat cat = new Cat(randomName(), randomAge());
@@ -68,7 +69,7 @@ public class Cat {
         } while (++catCount < 10);
     }
 
-    public void fourthCycle() {
+    public static void fourthCycle() {
         print("foreach");
         Cat[] cats = new Cat[5];
         for (Cat cat : cats) {
@@ -77,7 +78,7 @@ public class Cat {
         }
     }
 
-    public String randomName() {
+    public static String randomName() {
         char[] name = new char[random.nextInt(3, 7)];
         for (int i = 0; i < name.length; i = i + 2) {
             name[i] = CONSOSANT_LETTERS.charAt(random.nextInt(CONSOSANT_LETTERS.length()));
@@ -89,36 +90,36 @@ public class Cat {
         return String.valueOf(name);
     }
 
-    public int randomAge() {
+    public static int randomAge() {
         return random.nextInt(1, 28);
     }
 
     public String getName() {
-        return name;
+        return nameDefault;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public static void setName(String name) {
+        nameDefault = name;
     }
 
     public int getAge() {
-        return age;
+        return ageDefault;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public static void setAge(int age) {
+        ageDefault = age;
     }
 
-    public void print(String str) {
+    public static void print(String str) {
         System.out.println("\nКотики с циклом " + str + ":");
     }
 
     @Override
     public String toString() {
         String nameAge = "Котика зовут - " + getName() + ", ему: " + getAge() + " год";
-        if (age == 1) {
+        if (ageDefault == 1) {
             return nameAge;
-        } else if (age < 5) {
+        } else if (ageDefault < 5) {
             return nameAge.concat("а");
         } else {
             return nameAge.replace("год", "лет");
