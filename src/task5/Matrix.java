@@ -4,19 +4,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Matrix {
-    private static final Pattern PATTERN = Pattern.compile("[a-zA-Z]+");
-    private static final String[][] MATRIX = new String[10][10];
-    private static final String[] DIAGONAL = new String[20];
-    private static int counter = 0;
+    private final Pattern PATTERN = Pattern.compile("[a-zA-Z]+");
+    private final String[][] MATRIX = new String[10][10];
+    private final String[] DIAGONAL = new String[20];
+    private int counter = 0;
 
-    public static void start() {
+    public void start() {
         createMatrix();
         createDiagonal();
         printElement();
         roundNumber();
     }
 
-    private static void createMatrix() {
+    private void createMatrix() {
         for (int i = 0; i < MATRIX.length; i++) {
             for (int j = 0; j < MATRIX.length; j++) {
                 if (counter % 3 == 2) {
@@ -31,7 +31,7 @@ public class Matrix {
         counter = 0;
     }
 
-    private static void printMatrix() {
+    private void printMatrix() {
         System.out.println("Матрица 10x10:");
         for (String[] array : MATRIX) {
             for (String anInt : array) {
@@ -41,7 +41,7 @@ public class Matrix {
         }
     }
 
-    private static void createDiagonal() {
+    private void createDiagonal() {
         String print = "";
         for (int i = 0; i < (Math.min(MATRIX[0].length, MATRIX.length)); i++) {
             DIAGONAL[i] = MATRIX[i][i] + " ";
@@ -59,7 +59,7 @@ public class Matrix {
         System.out.println("\n\nСравниваем прямую и побочку:" + print);
     }
 
-    private static void printElement() {
+    private void printElement() {
         StringBuilder sb = new StringBuilder();
         for (String s : DIAGONAL) {
             Matcher matcher = PATTERN.matcher(s);
@@ -74,7 +74,7 @@ public class Matrix {
         System.out.print("Выводим 2-4й элемент со строк:\n" + sb + "\n\n");
     }
 
-    private static void roundNumber() {
+    private void roundNumber() {
         String[] num = new String[DIAGONAL.length - counter];
         counter = 0;
         for (String s : DIAGONAL) {
