@@ -1,7 +1,9 @@
 package task5;
 
-public class Random {
-    private static final java.util.Random random = new java.util.Random();
+import java.util.Random;
+
+public class RandomValue {
+    private static final Random random = new Random();
     private static final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
     public static String randomString() {

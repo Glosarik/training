@@ -20,9 +20,9 @@ public class Matrix {
         for (int i = 0; i < MATRIX.length; i++) {
             for (int j = 0; j < MATRIX.length; j++) {
                 if (counter % 3 == 2) {
-                    MATRIX[i][j] = Random.randomNumber();
+                    MATRIX[i][j] = RandomValue.randomNumber();
                 } else {
-                    MATRIX[i][j] = Random.randomString();
+                    MATRIX[i][j] = RandomValue.randomString();
                 }
                 ++counter;
             }
