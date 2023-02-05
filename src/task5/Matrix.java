@@ -1,38 +1,34 @@
 package task5;
 
-import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Matrix {
-
-    private static final Random RANDOM = new Random();
-    private static final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     private static final Pattern PATTERN = Pattern.compile("[a-zA-Z]+");
     private static final String[][] MATRIX = new String[10][10];
     private static final String[] DIAGONAL = new String[20];
-    private static int j = 0;
+    private static int counter = 0;
 
     public static void start() {
-        createAndDrawMatrix();
+        createMatrix();
         createDiagonal();
         printElement();
         roundNumber();
     }
 
-    private static void createAndDrawMatrix() {
-        int num = 0;
+    private static void createMatrix() {
         for (int i = 0; i < MATRIX.length; i++) {
             for (int j = 0; j < MATRIX.length; j++) {
-                if (num % 3 == 2) {
-                    MATRIX[i][j] = randomNumber();
+                if (counter % 3 == 2) {
+                    MATRIX[i][j] = Random.randomNumber();
                 } else {
-                    MATRIX[i][j] = randomString();
+                    MATRIX[i][j] = Random.randomString();
                 }
-                ++num;
+                ++counter;
             }
         }
         printMatrix();
+        counter = 0;
     }
 
     private static void printMatrix() {
@@ -68,37 +64,26 @@ public class Matrix {
         for (String s : DIAGONAL) {
             Matcher matcher = PATTERN.matcher(s);
             if (matcher.find()) {
-                if (j != 0) {
+                if (counter != 0) {
                     stringBuilder.append(", ");
                 }
                 stringBuilder.append(s, 1, 4);
-                ++j;
+                ++counter;
             }
         }
         System.out.print("Выводим 2-4й элемент со строк:\n" + stringBuilder + "\n\n");
     }
 
     private static void roundNumber() {
-        String[] num = new String[DIAGONAL.length - j];
-        int k = 0;
+        String[] num = new String[DIAGONAL.length - counter];
+        counter = 0;
         for (String s : DIAGONAL) {
             Matcher matcher = PATTERN.matcher(s);
             if (!matcher.find()) {
-                num[k] = String.valueOf(Math.round(Float.parseFloat(s)));
-                ++k;
+                num[counter] = String.valueOf(Math.round(Float.parseFloat(s)));
+                ++counter;
             }
         }
         System.out.print("Выводим округленные числа:\n" + String.join("_", num));
-    }
-
-    private static String randomString() {
-        StringBuilder sb = new StringBuilder(7);
-        for (int i = 0; i < 7; i++)
-            sb.append(LETTERS.charAt(RANDOM.nextInt(LETTERS.length())));
-        return sb.toString();
-    }
-
-    private static String randomNumber() {
-        return String.valueOf(RANDOM.nextDouble(1, 9)).substring(0, 7);
     }
 }
