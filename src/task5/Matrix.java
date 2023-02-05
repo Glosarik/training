@@ -45,7 +45,7 @@ public class Matrix {
         String print = "";
         for (int i = 0; i < (Math.min(MATRIX[0].length, MATRIX.length)); i++) {
             DIAGONAL[i] = MATRIX[i][i] + " ";
-            DIAGONAL[i + 10] = MATRIX[i][MATRIX[0].length - i - 1] + " ";
+            DIAGONAL[i + 10] = MATRIX[i][MATRIX.length - i - 1] + " ";
             if (!DIAGONAL[i].equals(DIAGONAL[i + 10])) {
                 print = "\nНеа, как они могут быть равны, если тут чистый рандом то?, шанс 0.0000009%\n";
             } else {
@@ -53,25 +53,25 @@ public class Matrix {
             }
         }
         System.out.println("\nПрямая и побочка в 1м массиве:");
-        for (String i : DIAGONAL) {
-            System.out.print(i);
+        for (String str : DIAGONAL) {
+            System.out.print(str);
         }
         System.out.println("\n\nСравниваем прямую и побочку:" + print);
     }
 
     private static void printElement() {
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (String s : DIAGONAL) {
             Matcher matcher = PATTERN.matcher(s);
             if (matcher.find()) {
                 if (counter != 0) {
-                    stringBuilder.append(", ");
+                    sb.append(", ");
                 }
-                stringBuilder.append(s, 1, 4);
+                sb.append(s, 1, 4);
                 ++counter;
             }
         }
-        System.out.print("Выводим 2-4й элемент со строк:\n" + stringBuilder + "\n\n");
+        System.out.print("Выводим 2-4й элемент со строк:\n" + sb + "\n\n");
     }
 
     private static void roundNumber() {
@@ -80,7 +80,7 @@ public class Matrix {
         for (String s : DIAGONAL) {
             Matcher matcher = PATTERN.matcher(s);
             if (!matcher.find()) {
-                num[counter] = String.valueOf(Math.round(Float.parseFloat(s)));
+                num[counter] = String.valueOf(Math.round(Double.parseDouble(s)));
                 ++counter;
             }
         }
