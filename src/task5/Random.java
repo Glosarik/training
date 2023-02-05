@@ -1,7 +1,6 @@
 package task5;
 
 public class Random {
-
     private static final java.util.Random random = new java.util.Random();
     private static final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
