@@ -1,6 +1,7 @@
 package task6.entity;
 
-import static task6.Constants.*;
+import static task6.Constants.FORM_CONTAINER;
+import static task6.Constants.SHIP;
 
 public class Ship extends Port {
 
@@ -19,7 +20,9 @@ public class Ship extends Port {
             for (Container c : d.container) {
                 totalWeight += c.getWeight();
                 ++quantityContainer;
-                print(c.getDiameter(), c.getHeight(), FORM_CONTAINER[c.randomForm()], c.getVolume(), Container.LIQUID[c.randomLiquid()][0], Double.parseDouble(Container.LIQUID[c.randomLiquid()][1]), c.getWeight());
+                print(c.getDiameter(), c.getHeight(), FORM_CONTAINER[c.randomForm()], c.getVolume(),
+                        Container.LIQUID[c.randomLiquid()][0], Double.parseDouble(Container.LIQUID[c.randomLiquid()][1]),
+                        c.getWeight());
             }
         }
         quantityContainer = 0;
