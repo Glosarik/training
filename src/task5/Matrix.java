@@ -14,11 +14,7 @@ public class Matrix {
     private void createMatrix() {
         for (int i = 0; i < MATRIX.length; i++) {
             for (int j = 0; j < MATRIX.length; j++) {
-                if (counter % 3 == 2) {
-                    MATRIX[i][j] = RandomValue.randomNumber();
-                } else {
-                    MATRIX[i][j] = RandomValue.randomString();
-                }
+                MATRIX[i][j] = counter % 3 == 2 ? RandomValue.randomNumber() : RandomValue.randomString();
                 ++counter;
             }
         }
