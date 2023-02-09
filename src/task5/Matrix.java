@@ -3,18 +3,13 @@ package task5;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static task5.Constants.*;
+
 public class Matrix {
     private final Pattern PATTERN = Pattern.compile("[a-zA-Z]+");
     private final String[][] MATRIX = new String[10][10];
     private final String[] DIAGONAL = new String[20];
     private int counter = 0;
-
-    public void start() {
-        createMatrix();
-        createDiagonal();
-        printElement();
-        roundNumber();
-    }
 
     private void createMatrix() {
         for (int i = 0; i < MATRIX.length; i++) {
@@ -32,7 +27,7 @@ public class Matrix {
     }
 
     private void printMatrix() {
-        System.out.println("Матрица 10x10:");
+        System.out.println(TASK_1);
         for (String[] array : MATRIX) {
             for (String anInt : array) {
                 System.out.printf(" " + anInt);
@@ -46,17 +41,13 @@ public class Matrix {
         for (int i = 0; i < (Math.min(MATRIX[0].length, MATRIX.length)); i++) {
             DIAGONAL[i] = MATRIX[i][i] + " ";
             DIAGONAL[i + 10] = MATRIX[i][MATRIX.length - i - 1] + " ";
-            if (!DIAGONAL[i].equals(DIAGONAL[i + 10])) {
-                print = "\nНеа, как они могут быть равны, если тут чистый рандом то?, шанс 0.0000009%\n";
-            } else {
-                print = "\nНу нифига себе, мы попали в шанс 0.0000009%";
-            }
+            print = DIAGONAL[i].equals(DIAGONAL[i + 10]) ? DIAGONAL_TRUE : DIAGONAL_FALSE;
         }
-        System.out.println("\nПрямая и побочка в 1м массиве:");
+        System.out.println(TASK_2);
         for (String str : DIAGONAL) {
             System.out.print(str);
         }
-        System.out.println("\n\nСравниваем прямую и побочку:" + print);
+        System.out.println(TASK_3 + print);
     }
 
     private void printElement() {
@@ -71,7 +62,7 @@ public class Matrix {
                 ++counter;
             }
         }
-        System.out.print("Выводим 2-4й элемент со строк:\n" + sb + "\n\n");
+        System.out.print(TASK_4 + sb + "\n");
     }
 
     private void roundNumber() {
@@ -84,6 +75,13 @@ public class Matrix {
                 ++counter;
             }
         }
-        System.out.print("Выводим округленные числа:\n" + String.join("_", num));
+        System.out.print(TASK_5 + String.join("_", num));
+    }
+
+    public void start() {
+        createMatrix();
+        createDiagonal();
+        printElement();
+        roundNumber();
     }
 }

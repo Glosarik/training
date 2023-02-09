@@ -2,9 +2,10 @@ package task5;
 
 import java.util.Random;
 
+import static task5.Constants.LETTERS;
+
 public class RandomValue {
     private static final Random random = new Random();
-    private static final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
     public static String randomString() {
         StringBuilder sb = new StringBuilder(7);
