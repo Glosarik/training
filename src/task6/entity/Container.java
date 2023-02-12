@@ -8,9 +8,10 @@ public class Container extends Deck {
     private int diameter;
     public long volume;
     public static final String[][] LIQUID = new String[][]{{"Вода", "1000"}, {"Бромистоводородная кислота (65%)", "1767.5"}};
+    private static final int TWO = 2;
 
     public Container[] createContainer() {
-        int size = random.nextBoolean() ? 2 : 4;
+        int size = random.nextBoolean() ? TWO : 4;
         Container[] containers = new Container[size];
         if (containers.length == 2) {
             for (int i = 0; i < containers.length; i++) {
@@ -27,14 +28,14 @@ public class Container extends Deck {
     protected long getVolume() {
         switch (this.form) {
             case 0:
-                return this.volume = (int) Math.round(Math.PI * height * Math.pow(diameter, 2) / 4);
+                return this.volume = (int) Math.round(Math.PI * height * Math.pow(diameter, TWO) / 4);
             case 1:
                 double s = Math.pow(diameter, 2) / 2;
                 return this.volume = (int) Math.round(s * height);
             case 2:
-                return this.volume = (int) Math.round(1 / 3d * Math.PI * Math.pow(diameter, 2) * height);
+                return this.volume = (int) Math.round(1 / 3d * Math.PI * Math.pow(diameter, TWO) * height);
+            default: return 0;
         }
-        return 0;
     }
 
     public int getDiameter() {

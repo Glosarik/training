@@ -13,4 +13,6 @@ public final class Constants {
     public static final String METERS = "м3";
     public static final String[] FORM_CONTAINER = new String[]{"Цилиндрический", "Квадратный", "Конус"};
     public static final String[] SHIP = new String[]{"Однопалубный", "Двухпалубный"};
+
+    private Constants(){}
 }
