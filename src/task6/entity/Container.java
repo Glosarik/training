@@ -68,10 +68,10 @@ public class Container extends Deck {
     public Container() {
     }
 
-    public Container(int diameter, int height, int form, int w) {
+    public Container(int diameter, int height, int form, int weight) {
         this.diameter = diameter;
         this.height = height;
         this.form = form;
-        this.weight = w;
+        this.weight = weight;
     }
 }
