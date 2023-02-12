@@ -22,11 +22,4 @@ public class Port {
         System.out.println(quantityContainer + ") " + DIAGONAL + diagonal + HEIGHT + height + FORM + form + VOLUME +
                 volume + LIQUID + liquid + DENSITY + density + METERS + WEIGHT + weight + KILOGRAMS);
     }
-
-    public Port() {
-    }
-
-    public void start() {
-        addShip();
-    }
 }
