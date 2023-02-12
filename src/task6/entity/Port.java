@@ -6,9 +6,9 @@ import static task6.Constants.*;
 
 public class Port {
 
-    public final Random random = new Random();
-    public static final Port[] PORTS = new Port[10];
-    public int quantityContainer;
+    protected final Random random = new Random();
+    protected static final Port[] PORTS = new Port[10];
+    protected int quantityContainer;
 
     public void addShip() {
         Ship ship = new Ship();
