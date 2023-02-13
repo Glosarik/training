@@ -1,7 +1,9 @@
-package task7;
+package task7.entity;
 
 public enum Head implements Part<String> {
-    OVAL("Oval"), ROUND("Round"), SQUARE("Square");
+    OVAL("Овальная"),
+    ROUND("Круглая"),
+    SQUARE("Квадратная");
 
     private final String name;
 

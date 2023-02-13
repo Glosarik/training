@@ -1,5 +1,7 @@
 package task7;
 
+import task7.factory.RobotFactory;
+
 /**
  * 1. Создать два завода по производству роботов
  * 1.1 Должно быть три разных робота.
@@ -12,7 +14,7 @@ package task7;
  */
 public class Main {
     public static void main(String[] args) {
-        Factory factory = new Factory();
+        RobotFactory factory = new RobotFactory();
         factory.createRobot();
     }
 }

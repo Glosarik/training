@@ -1,7 +1,9 @@
-package task7;
+package task7.entity;
 
 public enum Body implements Part<String> {
-    LONG("Long"), SHORT("Short"), WIDE("Wide");
+    LONG("Длинное"),
+    SHORT("Короткое"),
+    WIDE("Широкое");
 
     private final String name;
 
