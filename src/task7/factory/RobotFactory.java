@@ -14,7 +14,7 @@ public class RobotFactory {
     private int id;
 
     public void createRobot() {
-        Robot[] robots = new Robot[9];
+        Robot[] robots = new Robot[NINE];
         Head[] heads = new HeadFactory().create();
         Body[] bodies = new BodyFactory().create();
         for (int i = ONE; i < robots.length; i++) {
