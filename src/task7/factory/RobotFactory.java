@@ -1,8 +1,8 @@
 package task7.factory;
 
-import task7.entity.Robot;
 import task7.entity.Body;
 import task7.entity.Head;
+import task7.entity.Robot;
 
 import java.util.Random;
 
@@ -15,28 +15,16 @@ public class RobotFactory {
 
     public void createRobot() {
         Robot[] robots = new Robot[NINE];
-        Head[] heads = new HeadFactory().create();
-        Body[] bodies = new BodyFactory().create();
+        HeadFactory headFactory = new HeadFactory();
+        BodyFactory bodyFactory = new BodyFactory();
+
         for (int i = ONE; i < robots.length; i++) {
-            int num = random.nextInt(bodies.length);
-            robots[i] = new Robot(heads[i], bodies[num], "Prototype_" + i);
+            int num = random.nextInt(bodyFactory.create().length);
+            robots[i] = new Robot(headFactory.create()[i], bodyFactory.create()[num], "Prototype_" + i);
         }
 
         for (Robot robot : robots) {
             System.out.println(robot);
-        }
-    }
-
-    class BodyFactory implements Factory<Body> {
-
-        @Override
-        public Body[] create() {
-            Body[] bodies = new Body[NINE];
-            for (int i = ONE; i < bodies.length; i++) {
-                id = ++id == THREE ? ONE : id;
-                bodies[i] = Body.values()[id];
-            }
-            return bodies;
         }
     }
 
@@ -50,6 +38,19 @@ public class RobotFactory {
                 heads[i] = Head.values()[id];
             }
             return heads;
+        }
+    }
+
+    class BodyFactory implements Factory<Body> {
+
+        @Override
+        public Body[] create() {
+            Body[] bodies = new Body[NINE];
+            for (int i = ONE; i < bodies.length; i++) {
+                id = ++id == THREE ? ONE : id;
+                bodies[i] = Body.values()[id];
+            }
+            return bodies;
         }
     }
 }
