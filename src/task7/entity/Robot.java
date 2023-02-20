@@ -1,8 +1,5 @@
 package task7.entity;
 
-import task7.entity.Body;
-import task7.entity.Head;
-
 import static task7.Constants.*;
 
 public class Robot {

@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class RobotFactory {
     private final Random random = new Random();
-    private static final int ONE = 0;
+    public static final int ONE = 0;
     private static final int THREE = 3;
     private static final int NINE = 9;
     private int id;
@@ -54,3 +54,4 @@ public class RobotFactory {
         }
     }
 }
+
