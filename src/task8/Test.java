@@ -12,7 +12,8 @@ public class Test {
         }
         forRes(myArrayList);
 
-        System.out.println(NEW_LINE + TEST_TWO_ONE + myArrayList.isEmpty() + SIZE + myArrayList.size());
+        System.out.println(NEW_LINE + TEST_TWO_ONE + myArrayList.isEmpty());
+        forRes(myArrayList);
 
         System.out.println(TEST_THREE + myArrayList.contains(NINE));
         myArrayList.remove(NINE);

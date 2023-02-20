@@ -15,7 +15,7 @@ public final class Constants {
     public static final String SIZE = ", Size: ";
     public static final String INVALID_INDEX = "Invalid index: ";
     public static final String TEST_ONE = "Создаём наш лист и добавляем в него элементы:";
-    public static final String TEST_TWO_ONE = "Проверяем, есть ли в нашем листе элементы и сколько же их:" + NEW_LINE +
+    public static final String TEST_TWO_ONE = "Проверяем, есть ли в нашем листе элементы:" + NEW_LINE +
             "Пустой наш лист? ";
     public static final String TEST_THREE = NEW_LINE + "Проверка на наличие 9го элемента, если есть то удаляем:" + NEW_LINE
             + "Есть элемент? ";
