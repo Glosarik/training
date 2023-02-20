@@ -5,7 +5,6 @@ import static task8.Constants.*;
 public class Test {
 
     public void test() {
-
         MyArrayList<Integer> myArrayList = new MyArrayList<>();
         System.out.println(TEST_ONE);
         for (int i = ZERO; i < TWELVE; i++) {
