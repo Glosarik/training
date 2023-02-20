@@ -21,7 +21,8 @@ public class Test {
 
         System.out.println(TEST_FOUR);
         MyArrayList<Integer> newArrayList = new MyArrayList<>(SEVEN);
-        for (int i = myArrayList.size(); i < myArrayList.size() + newArrayList.getLength(); i++) {
+        int count = myArrayList.size() + newArrayList.getLength();
+        for (int i = myArrayList.size(); i < count; i++) {
             newArrayList.add(i + ONE);
         }
         forRes(newArrayList);
