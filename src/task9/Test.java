@@ -67,7 +67,7 @@ public class Test {
         System.out.println(OPTION_THREE_ONE);
         int num = scanner.nextInt();
         try {
-            throwCustomException3(num);
+            throwNegativeNumberException(num);
         } catch (NegativeNumberException e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
@@ -76,7 +76,7 @@ public class Test {
         }
     }
 
-    public static void throwCustomException3(int number) throws NegativeNumberException {
+    public static void throwNegativeNumberException(int number) throws NegativeNumberException {
         if (number < ZERO) {
             throw new NegativeNumberException(EXCEPTION_THREE_ONE);
         } else {
