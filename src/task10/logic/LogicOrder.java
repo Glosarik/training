@@ -1,7 +1,7 @@
 package task10.logic;
 
-import task10.util.GenerateUtil;
 import task10.items.Order;
+import task10.util.GenerateUtil;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -18,7 +18,7 @@ public class LogicOrder {
     private int count = ONE;
 
     public void create(ArrayList<String> list) {
-        String tableHeader = GenerateUtil.tableHeader().replace(DATE_PRODUCT, DATE_ORDER);
+        String tableHeader = GenerateUtil.tableHeader();
         try (var writer = new BufferedWriter(new FileWriter(FILE))) {
             writer.write(tableHeader + NEW_LINE);
             writer.write(".".repeat(tableHeader.length()) + NEW_LINE);

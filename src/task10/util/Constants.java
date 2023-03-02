@@ -21,8 +21,7 @@ public final class Constants {
     public static final String RESOURCES = "resources";
     public static final String COUNT = "шт.";
     public static final String NAME_PRODUCT = "Название товара";
-    public static final String DATE_PRODUCT = "Дата изготовления";
-    public static final String DATE_ORDER = "Дата заказа";
+    public static final String DATE_PRODUCT = "Дата";
     public static final String ID = "Идентификатор";
     public static final String PRICE = "Цена";
     public static final String QUANTITY = "Количество";
@@ -33,7 +32,7 @@ public final class Constants {
     public static final String SCREEN = "Монитор";
     public static final String CLOSE_PROGRAM = "Выход из программы";
     public static final String ERROR_ONE = "Ошибка: введите число от 1 до 2, или 9 для выхода";
-    public static final String ERROR_TWO = "Ошибка: введите число от 1 до 4, или 9 для выхода";
+    public static final String ERROR_TWO = "Ошибка: введите число от 1 до 3, или 9 для выхода";
     public static final String ERROR_THREE = "Файл не найден: ";
     public static final String ERROR_FOUR = "Ошибка при создании файла: ";
     public static final String ADD_PRODUCT = "Продукт был успешно добавлен!";

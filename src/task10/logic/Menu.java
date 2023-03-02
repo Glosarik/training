@@ -67,7 +67,7 @@ public class Menu {
             if (!LogicOrder.FILE.isFile()) {
                 System.out.println(PRINT_THREE_MENU_ONE);
             } else {
-                System.out.println(GenerateUtil.printLine(tableHeader.replace(DATE_PRODUCT, DATE_ORDER), "."));
+                System.out.println(GenerateUtil.printLine(tableHeader, "."));
                 for (String s : GenerateUtil.getList(LogicOrder.FILE)) {
                     System.out.println(GenerateUtil.printLine(s, "—"));
                 }

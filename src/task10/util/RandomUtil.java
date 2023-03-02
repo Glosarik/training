@@ -29,8 +29,8 @@ public class RandomUtil {
         return uuidAsString.replaceAll("-", "").substring(ZERO, THIRTEEN);
     }
 
-    public static float randomPrice() {
+    public static String randomPrice() {
         Random random = new Random();
-        return random.nextFloat(ZERO, NINE);
+        return Float.toString(random.nextFloat(ZERO, NINE));
     }
 }
